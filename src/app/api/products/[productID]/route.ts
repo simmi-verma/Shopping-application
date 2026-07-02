@@ -1,8 +1,5 @@
-import connect from "@/helpers/db";
-import Product from "@/models/Product";
+import { productRepo } from "@/helpers/productRepo";
 import { NextRequest, NextResponse } from "next/server";
-
-connect();
 
 export async function GET(
   req: NextRequest,
@@ -11,7 +8,7 @@ export async function GET(
   try {
     const id = params.productID;
 
-    const product = await Product.findById(id);
+    const product = await productRepo.getProductById(id);
 
     return NextResponse.json(product);
   } catch (err: any) {

@@ -1,6 +1,5 @@
 import Slider from "@/components/Slider";
-import connect from "@/helpers/db";
-import Product from "@/models/Product";
+import { productRepo } from "@/helpers/productRepo";
 import Image from "next/image";
 import Link from "next/link";
 import { priceFormat } from "@/lib/utils";
@@ -8,9 +7,8 @@ import { Star, ArrowRight, ShieldCheck, Truck, RotateCcw } from "lucide-react";
 
 async function getProducts() {
   try {
-    await connect();
-    const products = await Product.find({}).limit(8).lean();
-    return JSON.parse(JSON.stringify(products));
+    const products = await productRepo.getHomepageProducts(8);
+    return products;
   } catch (error) {
     console.error("Failed to fetch products for homepage:", error);
     return [];
