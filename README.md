@@ -89,10 +89,6 @@ If you want to contribute to this project, please follow these guidelines:
 - Create a pull request with a detailed description of your changes and link it to the related issue (if any)
 - Wait for the code review and feedback
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
 ## Contact
 
 If you have any questions or feedback, feel free to reach out to me via my [LinkedIn Profile](https://www.linkedin.com/in/simmi-verma/) or visit my [Portfolio Website](https://portfolio-simmi-verma.vercel.app/).
