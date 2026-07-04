@@ -75,7 +75,7 @@ To test the payment functionality, you can use the following test card details:
 
 ## Demo
 
-You can view the live demo of the app deployed on Vercel here: ([https://dev-shopp.vercel.app/](https://dev-shopp.vercel.app/))
+You can view the live demo of the app deployed on Vercel here: ([https://shopping-application-ivory.vercel.app/](https://shopping-application-ivory.vercel.app/))
 
 ## Contribution
 
