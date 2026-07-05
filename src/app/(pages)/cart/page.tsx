@@ -14,6 +14,7 @@ import {
   removeSelectedCart,
   setTotal,
 } from "@/redux/slice/cartSlice";
+import { Cart } from "@/lib/interface";
 import axios from "axios";
 import { Plus, X } from "lucide-react";
 import { Minus } from "lucide-react";
@@ -84,7 +85,7 @@ const Page = () => {
           </>
         )}
         {cart.length > 0 ? (
-          cart.map((elm) => (
+          cart.map((elm: Cart) => (
             <div
               className="flex items-center gap-4 p-4 md:px-8 bg-white mb-4"
               key={elm._id}
@@ -178,7 +179,7 @@ const Page = () => {
                   id="all"
                   checked={selectAll}
                   onChange={() =>
-                    dispatch(handleSelectAll(cart.map((c) => c._id)))
+                    dispatch(handleSelectAll(cart.map((c: Cart) => c._id)))
                   }
                 />{" "}
                 All

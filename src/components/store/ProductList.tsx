@@ -2,6 +2,7 @@
 
 import React from "react";
 import Cards from "../Card";
+import { IProduct } from "@/lib/interface";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setOpenFilter } from "@/redux/slice/filterSlice";
 import { Filter } from "lucide-react";
@@ -34,7 +35,7 @@ const ProductList = () => {
       )}
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 sm:gap-4 gap-2">
         {allProducts.products.length > 0 ? (
-          allProducts?.products.map((product) => (
+          allProducts?.products.map((product: IProduct) => (
             <Cards product={product} key={product._id} />
           ))
         ) : (

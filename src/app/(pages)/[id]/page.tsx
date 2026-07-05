@@ -88,7 +88,7 @@ const Page = ({ params }: { params: { id: string } }) => {
               <div className="pb-2">
                 <h2 className="text-xl pb-2">Colors</h2>
                 <div className="flex items-center gap-2">
-                  {product.colors?.map((color, index) => (
+                  {product.colors?.map((color: any, index: number) => (
                     <button
                       className=" p-1 border w-32 flex items-center gap-1 rounded-md"
                       key={index}
@@ -106,7 +106,7 @@ const Page = ({ params }: { params: { id: string } }) => {
               {/* -----HIGHLIGHTS----- */}
               <ul className="">
                 <h2 className="text-xl pb-2">Highlights</h2>
-                {product.highlights?.map((highlight, index) => (
+                {product.highlights?.map((highlight: string, index: number) => (
                   <li key={index} className="pb-1">
                     <span className="inline-block w-1 h-1 bg-black rounded-full mr-2"></span>
                     {highlight}

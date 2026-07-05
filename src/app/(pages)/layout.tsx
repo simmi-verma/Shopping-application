@@ -31,13 +31,15 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-slate-50">
       <Suspense fallback={<Loading />}>
         <Header />
-        {children}
+        <div className="flex-grow">
+          {children}
+        </div>
         <Footer />
       </Suspense>
-    </>
+    </div>
   );
 };
 

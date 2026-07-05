@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
 
 export default async function connect() {
+  if (!process.env.MONGO_URI) {
+    console.log("No MONGO_URI defined. Using JSON database fallback.");
+    return;
+  }
   try {
-    mongoose.connect(process.env.MONGO_URI!);
+    mongoose.connect(process.env.MONGO_URI);
     const connection = mongoose.connection;
 
     connection.on("connected", () => {
@@ -13,10 +17,9 @@ export default async function connect() {
       console.log(
         "MongoDB connection error. Please make sure MongoDB is running. " + err
       );
-      process.exit();
     });
   } catch (err) {
-    console.log("Something goes wrong!");
+    console.log("Something went wrong with MongoDB connection!");
     console.log(err);
   }
 }

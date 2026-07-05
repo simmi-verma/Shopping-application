@@ -1,6 +1,7 @@
 "use client";
 
 import { priceFormat } from "@/lib/utils";
+import { Cart } from "@/lib/interface";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setOrder } from "@/redux/slice/orderSlice";
 import Image from "next/image";
@@ -55,7 +56,7 @@ const Page = () => {
               <div className="p-8">
                 <ul className="-my-7 divide-y divide-gray-200">
                   {orders !== null &&
-                    orders.items.map((product) => (
+                    orders.items.map((product: Cart) => (
                       <li key={product._id}>
                         <Link
                           href={product._id}
